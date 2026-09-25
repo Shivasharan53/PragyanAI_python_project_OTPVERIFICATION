@@ -22,70 +22,233 @@ st.set_page_config(
 
 
 # ============================================================
-# CUSTOM CSS
-# Only styling here - NO HTML UI components
+# PROFESSIONAL LIGHT UI
 # ============================================================
 
 st.markdown(
     """
     <style>
 
-    /* Main application background */
+    /* ================================
+       MAIN APPLICATION
+       ================================ */
+
     .stApp {
-        background-color: #f5f7fb;
+        background-color: #f5f7fb !important;
+        color: #111827 !important;
     }
 
-    /* Sidebar */
+    .main .block-container {
+        max-width: 1250px;
+        padding-top: 2rem;
+        padding-bottom: 3rem;
+    }
+
+
+    /* ================================
+       MAIN HEADINGS
+       ================================ */
+
+    .main h1,
+    .main h2,
+    .main h3,
+    .main h4 {
+        color: #111827 !important;
+    }
+
+    .main h1 {
+        font-size: 2.3rem !important;
+        font-weight: 800 !important;
+    }
+
+    .main h2 {
+        font-size: 1.8rem !important;
+        font-weight: 750 !important;
+    }
+
+    .main h3 {
+        font-size: 1.35rem !important;
+        font-weight: 700 !important;
+    }
+
+
+    /* ================================
+       MAIN TEXT
+       ================================ */
+
+    .main p {
+        color: #374151 !important;
+    }
+
+    .main span {
+        color: inherit;
+    }
+
+    .main label {
+        color: #111827 !important;
+        font-weight: 600 !important;
+    }
+
+
+    /* ================================
+       CAPTION
+       ================================ */
+
+    [data-testid="stCaptionContainer"] {
+        color: #6b7280 !important;
+    }
+
+
+    /* ================================
+       DIVIDER
+       ================================ */
+
+    .main hr {
+        border-color: #d1d5db !important;
+    }
+
+
+    /* ================================
+       INPUT
+       ================================ */
+
+    div[data-baseweb="input"] {
+        background-color: #ffffff !important;
+        border-radius: 10px !important;
+    }
+
+    .main input {
+        background-color: #ffffff !important;
+        color: #111827 !important;
+        border: 1px solid #d1d5db !important;
+        border-radius: 10px !important;
+    }
+
+    .main input::placeholder {
+        color: #9ca3af !important;
+    }
+
+
+    /* ================================
+       MAIN BUTTONS
+       ================================ */
+
+    .main .stButton button {
+        background-color: #111827 !important;
+        color: #ffffff !important;
+        border: 1px solid #111827 !important;
+        border-radius: 10px !important;
+        min-height: 46px !important;
+        font-weight: 700 !important;
+        font-size: 0.95rem !important;
+    }
+
+    .main .stButton button p {
+        color: #ffffff !important;
+    }
+
+    .main .stButton button:hover {
+        background-color: #374151 !important;
+        border-color: #374151 !important;
+    }
+
+
+    /* ================================
+       METRIC CARDS
+       ================================ */
+
+    div[data-testid="stMetric"] {
+        background-color: #ffffff !important;
+        border: 1px solid #e5e7eb !important;
+        border-radius: 16px !important;
+        padding: 20px !important;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06) !important;
+    }
+
+    div[data-testid="stMetric"] label {
+        color: #4b5563 !important;
+        font-weight: 700 !important;
+    }
+
+    div[data-testid="stMetric"] div[data-testid="stMetricValue"] {
+        color: #111827 !important;
+        font-weight: 800 !important;
+    }
+
+
+    /* ================================
+       ALERT BOXES
+       ================================ */
+
+    div[data-testid="stAlert"] {
+        border-radius: 12px !important;
+    }
+
+
+    /* ================================
+       SIDEBAR
+       ================================ */
+
     section[data-testid="stSidebar"] {
-        background-color: #111827;
+        background-color: #111827 !important;
     }
 
-    section[data-testid="stSidebar"] * {
-        color: #ffffff;
+    section[data-testid="stSidebar"] h1,
+    section[data-testid="stSidebar"] h2,
+    section[data-testid="stSidebar"] h3 {
+        color: #ffffff !important;
     }
 
-    /* Sidebar buttons */
+    section[data-testid="stSidebar"] p {
+        color: #e5e7eb !important;
+    }
+
+    section[data-testid="stSidebar"] span {
+        color: #e5e7eb !important;
+    }
+
+
+    /* ================================
+       SIDEBAR BUTTONS
+       ================================ */
+
     section[data-testid="stSidebar"] .stButton button {
-        width: 100%;
-        min-height: 46px;
-        border-radius: 10px;
-        border: 1px solid #374151;
-        background-color: #1f2937;
-        color: white;
-        font-weight: 600;
+        width: 100% !important;
+        min-height: 48px !important;
+        background-color: #1f2937 !important;
+        color: #ffffff !important;
+        border: 1px solid #374151 !important;
+        border-radius: 10px !important;
+        font-weight: 600 !important;
+    }
+
+    section[data-testid="stSidebar"] .stButton button p {
+        color: #ffffff !important;
     }
 
     section[data-testid="stSidebar"] .stButton button:hover {
-        background-color: #374151;
-        border-color: #6366f1;
+        background-color: #374151 !important;
+        border-color: #6366f1 !important;
     }
 
-    /* Main buttons */
-    .stButton button {
-        min-height: 45px;
-        border-radius: 10px;
-        font-weight: 700;
+
+    /* ================================
+       SIDEBAR DIVIDERS
+       ================================ */
+
+    section[data-testid="stSidebar"] hr {
+        border-color: #374151 !important;
     }
 
-    /* Metric styling */
-    div[data-testid="stMetric"] {
-        background-color: white;
-        border: 1px solid #e5e7eb;
-        border-radius: 15px;
-        padding: 15px;
-    }
 
-    /* Input boxes */
-    div[data-baseweb="input"] {
-        border-radius: 10px;
-    }
+    /* ================================
+       HIDE STREAMLIT FOOTER
+       ================================ */
 
-    /* Hide Streamlit footer */
     footer {
         visibility: hidden;
     }
 
-    /* Hide menu */
     #MainMenu {
         visibility: hidden;
     }
@@ -210,11 +373,7 @@ if missing_secrets:
     )
 
     st.write(
-        "Please add the following values in:"
-    )
-
-    st.code(
-        "Streamlit Cloud → Manage app → Settings → Secrets"
+        "Go to Streamlit Cloud → Manage app → Settings → Secrets."
     )
 
     st.write("Missing values:")
@@ -257,17 +416,11 @@ twilio_client = Client(
 # ============================================================
 
 def generate_otp():
-    """
-    Generate a secure 6-digit OTP.
-    """
 
     return f"{random.SystemRandom().randint(0, 999999):06d}"
 
 
 def hash_otp(otp):
-    """
-    Hash OTP before storing it in session state.
-    """
 
     return hashlib.sha256(
         otp.encode("utf-8")
@@ -275,9 +428,6 @@ def hash_otp(otp):
 
 
 def valid_email(email):
-    """
-    Basic email validation.
-    """
 
     pattern = r"^[^@\s]+@[^@\s]+\.[^@\s]+$"
 
@@ -288,12 +438,6 @@ def valid_email(email):
 
 
 def valid_phone(phone):
-    """
-    International phone number validation.
-
-    Example:
-    +919876543210
-    """
 
     pattern = r"^\+[1-9]\d{7,14}$"
 
@@ -304,10 +448,6 @@ def valid_phone(phone):
 
 
 def otp_expired(created_time):
-    """
-    Email OTP validity:
-    5 minutes.
-    """
 
     if created_time is None:
         return True
@@ -318,7 +458,7 @@ def otp_expired(created_time):
 
 
 # ============================================================
-# EMAIL OTP
+# EMAIL OTP - SEND
 # ============================================================
 
 def send_email_otp(email):
@@ -403,6 +543,10 @@ PragyanAI Security Team
         )
 
 
+# ============================================================
+# EMAIL OTP - VERIFY
+# ============================================================
+
 def verify_email_otp(otp):
 
     if not otp:
@@ -431,7 +575,6 @@ def verify_email_otp(otp):
     ):
 
         st.session_state.email_hash = None
-
         st.session_state.email_created = None
 
         return (
@@ -447,7 +590,6 @@ def verify_email_otp(otp):
         st.session_state.email_verified = True
 
         st.session_state.email_hash = None
-
         st.session_state.email_created = None
 
         return (
@@ -462,7 +604,7 @@ def verify_email_otp(otp):
 
 
 # ============================================================
-# TWILIO SEND OTP
+# TWILIO - SEND OTP
 # ============================================================
 
 def send_twilio_otp(phone, channel):
@@ -512,7 +654,7 @@ def send_twilio_otp(phone, channel):
 
 
 # ============================================================
-# TWILIO VERIFY OTP
+# TWILIO - VERIFY OTP
 # ============================================================
 
 def verify_twilio_otp(phone, otp):
@@ -582,7 +724,7 @@ def verify_twilio_otp(phone, otp):
 
 
 # ============================================================
-# MAIN HEADER
+# APPLICATION HEADER
 # ============================================================
 
 st.title("🔐 PragyanAI")
@@ -591,7 +733,7 @@ st.subheader(
     "Secure Multi-Channel OTP Verification Platform"
 )
 
-st.caption(
+st.write(
     "Verify users securely through Email, SMS and WhatsApp."
 )
 
@@ -607,14 +749,10 @@ if st.session_state.page == "Dashboard":
     st.header("🏠 Security Dashboard")
 
     st.write(
-        "Manage OTP verification from one secure platform."
+        "Monitor and manage your OTP verification channels."
     )
 
-    st.write("")
-
-    # --------------------------------------------------------
-    # STATUS
-    # --------------------------------------------------------
+    st.divider()
 
     st.subheader("📊 Verification Status")
 
@@ -622,58 +760,71 @@ if st.session_state.page == "Dashboard":
 
     with col1:
 
-        email_status = (
-            "Verified"
-            if st.session_state.email_verified
-            else "Not Verified"
-        )
+        if st.session_state.email_verified:
 
-        st.metric(
-            "📧 Email",
-            email_status
-        )
+            st.metric(
+                "📧 Email",
+                "VERIFIED"
+            )
+
+        else:
+
+            st.metric(
+                "📧 Email",
+                "NOT VERIFIED"
+            )
 
     with col2:
 
-        sms_status = (
-            "Verified"
-            if st.session_state.sms_verified
-            else "Not Verified"
-        )
+        if st.session_state.sms_verified:
 
-        st.metric(
-            "📱 SMS",
-            sms_status
-        )
+            st.metric(
+                "📱 SMS",
+                "VERIFIED"
+            )
+
+        else:
+
+            st.metric(
+                "📱 SMS",
+                "NOT VERIFIED"
+            )
 
     with col3:
 
-        whatsapp_status = (
-            "Verified"
-            if st.session_state.whatsapp_verified
-            else "Not Verified"
-        )
+        if st.session_state.whatsapp_verified:
 
-        st.metric(
-            "🟢 WhatsApp",
-            whatsapp_status
-        )
+            st.metric(
+                "🟢 WhatsApp",
+                "VERIFIED"
+            )
+
+        else:
+
+            st.metric(
+                "🟢 WhatsApp",
+                "NOT VERIFIED"
+            )
+
+    st.write("")
 
     st.divider()
 
-    # --------------------------------------------------------
-    # QUICK ACTIONS
-    # --------------------------------------------------------
-
     st.subheader("🚀 Quick Actions")
+
+    st.write(
+        "Choose a verification channel to continue."
+    )
+
+    st.write("")
 
     col1, col2, col3 = st.columns(3)
 
     with col1:
 
         if st.button(
-            "📧 Email Verification",
-            key="quick_email",
+            "📧  Email Verification",
+            key="dashboard_email",
             use_container_width=True
         ):
 
@@ -684,8 +835,8 @@ if st.session_state.page == "Dashboard":
     with col2:
 
         if st.button(
-            "📱 SMS Verification",
-            key="quick_sms",
+            "📱  SMS Verification",
+            key="dashboard_sms",
             use_container_width=True
         ):
 
@@ -696,8 +847,8 @@ if st.session_state.page == "Dashboard":
     with col3:
 
         if st.button(
-            "🟢 WhatsApp Verification",
-            key="quick_whatsapp",
+            "🟢  WhatsApp Verification",
+            key="dashboard_whatsapp",
             use_container_width=True
         ):
 
@@ -705,23 +856,24 @@ if st.session_state.page == "Dashboard":
 
             st.rerun()
 
-    st.divider()
+    st.write("")
 
     st.info(
-        "💡 Select a channel from the sidebar to start verification."
+        "🔒 Your credentials are stored using "
+        "Streamlit Secrets and are not written into the application code."
     )
 
 
 # ============================================================
-# EMAIL PAGE
+# EMAIL VERIFICATION
 # ============================================================
 
 elif st.session_state.page == "Email":
 
     st.header("📧 Email Verification")
 
-    st.caption(
-        "Send a six-digit OTP to an email address and verify it."
+    st.write(
+        "Send a secure six-digit OTP to an email address."
     )
 
     st.divider()
@@ -807,15 +959,15 @@ elif st.session_state.page == "Email":
 
 
 # ============================================================
-# SMS PAGE
+# SMS VERIFICATION
 # ============================================================
 
 elif st.session_state.page == "SMS":
 
     st.header("📱 SMS Verification")
 
-    st.caption(
-        "Send a six-digit OTP to a mobile number."
+    st.write(
+        "Send a secure six-digit OTP to a mobile number."
     )
 
     st.divider()
@@ -905,15 +1057,15 @@ elif st.session_state.page == "SMS":
 
 
 # ============================================================
-# WHATSAPP PAGE
+# WHATSAPP VERIFICATION
 # ============================================================
 
 elif st.session_state.page == "WhatsApp":
 
     st.header("🟢 WhatsApp Verification")
 
-    st.caption(
-        "Send a six-digit OTP through WhatsApp."
+    st.write(
+        "Send a secure six-digit OTP through WhatsApp."
     )
 
     st.warning(
